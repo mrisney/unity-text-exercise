@@ -36,8 +36,7 @@ public class TestTextAnalyzer {
 		assertEquals(uniqueWordsZero.length, 0);
 
 		String[] uniqueWordsNull = TextAnalyzer.getUniqueWords(null);
-		assertEquals(uniqueWordsNull.length, 0);
-		
+		assertEquals(uniqueWordsNull.length, 0);		
 	}
 
 	@Test
@@ -47,29 +46,28 @@ public class TestTextAnalyzer {
 
 		assertThat(testWords,
 				hasItems(new Word("The", 3, 1),
-						new Word("quick", 5, 1),
-						new Word("brown", 5, 2),
-						new Word("fox", 3, 1),
-						new Word("jumped", 6, 1),
-						new Word("over", 4, 1),
-						new Word("the", 3, 1),
-						new Word("lazy", 4, 1),
-						new Word("dog’s", 5, 1),
-						new Word("back", 4, 1)));
+					new Word("quick", 5, 1),
+					new Word("brown", 5, 2),
+					new Word("fox", 3, 1),
+					new Word("jumped", 6, 1),
+					new Word("over", 4, 1),
+					new Word("the", 3, 1),
+					new Word("lazy", 4, 1),
+					new Word("dog’s", 5, 1),
+					new Word("back", 4, 1)));
 
 		String mobyDickChapter = getFile("mobydick.txt");
 		List<Word> melvilleWords = TextAnalyzer.analyzeWords(mobyDickChapter);
 
 		assertThat(melvilleWords,
 				hasItems(new Word("Call", 4, 1),
-						new Word("me", 2, 24),
-						new Word("Ishmael", 7, 1),
-						new Word("whaling", 7, 4)));
+					new Word("me", 2, 24),
+					new Word("Ishmael", 7, 1),
+					new Word("whaling", 7, 4)));
 				
 		String nullText = null;
 		List<Word> zeroWords = TextAnalyzer.analyzeWords(nullText);
 		assertEquals(zeroWords.size(), 0);
-		
 	}
 
 	@Test
@@ -81,15 +79,15 @@ public class TestTextAnalyzer {
 
 		assertThat(wordList,
 				contains(new Word("The", 3, 1),
-						new Word("fox", 3, 1),
-						new Word("the", 3, 1),
-						new Word("back", 4, 1),
-						new Word("lazy", 4, 1),
-						new Word("over", 4, 1),
-						new Word("brown", 5, 2),
-						new Word("dog’s", 5, 1),
-						new Word("quick", 5, 1),
-						new Word("jumped", 6, 1)));
+					new Word("fox", 3, 1),
+					new Word("the", 3, 1),
+					new Word("back", 4, 1),
+					new Word("lazy", 4, 1),
+					new Word("over", 4, 1),
+					new Word("brown", 5, 2),
+					new Word("dog’s", 5, 1),
+					new Word("quick", 5, 1),
+					new Word("jumped", 6, 1)));
 
 		String orderedText = getFile("order.txt");
 		List<Word> orderedWordList = TextAnalyzer.analyzeWords(orderedText);
@@ -97,9 +95,8 @@ public class TestTextAnalyzer {
 
 		assertThat(countedSortWordList, 
 				hasItems(new Word("a", 1, 1),
-						new Word("BBB", 3, 3),
-						new Word("DD", 2, 6)));
-
+					new Word("BBB", 3, 3),
+					new Word("DD", 2, 6)));
 	}
 
 	private String getFile(String fileName) {
