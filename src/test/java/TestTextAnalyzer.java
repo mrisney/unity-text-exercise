@@ -65,8 +65,7 @@ public class TestTextAnalyzer {
 						new Word("me", 2, 24),
 						new Word("Ishmael", 7, 1),
 						new Word("whaling", 7, 4)));
-		
-		
+				
 		String nullText = null;
 		List<Word> zeroWords = TextAnalyzer.analyzeWords(nullText);
 		assertEquals(zeroWords.size(), 0);
@@ -110,7 +109,6 @@ public class TestTextAnalyzer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		return result;
 	}
 }
